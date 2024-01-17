@@ -43,11 +43,11 @@ public class EmptyBiobotMaker : UserMod2
                 var oldCapacity = delivery.capacity;
                 delivery.capacity = val;
                 
-                if (oldCapacity > val)
+                if (__instance.HasBeenRevealed && oldCapacity > val)
                 {
                     emptyWorkable.DropAll();
                 } 
-                else if (oldCapacity < val)
+                else if (__instance.HasBeenRevealed && oldCapacity < val)
                 {
                     delivery.RequestDelivery();
                 }
